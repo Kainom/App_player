@@ -1,11 +1,8 @@
 // src/components/Header.tsx
-
-import React from "react";
-
 const Header: React.FC = () => {
   return (
     <header className="bg-gray-900 text-white shadow-md">
-      <div className="container ml-10  flex justify-start items-center py-3 gap-14">
+      <div className="container ml-10 w-11/12  flex justify-start items-center py-3 gap-14">
         {/* Logo Section */}
 
         <div className="flex w-11/12  items-center space-x-4">

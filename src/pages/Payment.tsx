@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-
+import Header from "../components/Header";
+import {useState } from "react";
 export default function Payment(): JSX.Element {
   const [people, setPeople] = useState<number>(0);
-  const [amount, setAmount] = useState(0);
 
 
-  const handlePeopleChange = (event) => {
+  const handlePeopleChange = () => {
     setPeople(people + 1);
   };
 
   return (
-    <>
     
+    <>
+    <Header/>
       <div className="mt-8 shadow-2xl rounded-3xl m-auto max-w-screen-lg	text-slate-200 px-5 py-5 
       bg-gray-900">
       <h1 className="text-slate-200 text-4xl  pl-5 mb-20 mt-4 font-bold  text-start">Payment History</h1>
