@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start":"node dist/assets/index-f40OySzR.js",
+    "start": "node dist/assets/index-f40OySzR.js",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build-clean": "tsup src",
