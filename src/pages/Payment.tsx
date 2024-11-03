@@ -8,6 +8,16 @@ import { TbRuler2 } from "react-icons/tb";
 import axios from "../services/Axios";
 
 export default function Payment(): JSX.Element {
+  // const [search, setSearch] = useState("");
+
+  type Jogador =  {
+    cod_jogador: number;
+    nome: string;
+    email: string;
+    datanasc: string;
+    // pagamento:Pagamento[];
+  }
+
   interface Pagamento {
     cod_pagamento: number;
     ano: number;
@@ -16,26 +26,25 @@ export default function Payment(): JSX.Element {
     jogador: Jogador;
   }
 
-  interface Jogador {
-    cod_jogador: number;
-    nome: string;
-    email: string;
-    datanasc: string;
-  }
 
   const [payShow, setPayShow] = useState<number | null>(null);
   const [payment, setPayment] = useState<Pagamento[]>([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/futebol/pagamento/")
-      .then((response) => {
-        // console.log(response.data);
-        setPayment([...response.data]);
-      })
-      .catch((e) => console.log(e));
-    console.log(payment);
+    const getData = async () =>{
+      try {
+      const response = await axios.get<Pagamento[]>("http://localhost:8000/futebol/pagamento/")
+         console.log(response.data);
+         setPayment(response.data);
+
+      } catch (error) {
+        console.error('Error fetching payments:', error);
+      }
+    }
+      getData();
   }, []);
+
+
 
   const handleShow = (id: number) => {
     setPayShow((prevSelectedId) => (prevSelectedId === id ? null : id));

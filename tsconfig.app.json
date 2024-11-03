@@ -20,5 +20,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/pages/Home.tsx"]
+  "include": ["src", "src/pages/LoginRegister.tsx"]
 }
